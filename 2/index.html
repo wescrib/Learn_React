@@ -4,36 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>React! React! React!</title>
+    <title>React Components</title>
     <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
     <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
     <style>
-        #container{
-            padding: 50px;
-            background-color: #EEE;
-        }
 
-        #container h3{
-            font-size: 48px;
-            font-family: sans-serif;
-            color: #0080A8;
-            font-style: italic
-        }
     </style>
 </head>
 <body>
     <div id="container"></div>
+
     <script type="text/babel">
-    var destination = document.querySelector("#container")
+        var HelloWorld = React.createClass({
+            render: function(){
+                return (
+                    <p>Hello, {this.props.greetTarget}!</p>
+                );
+            }
+        });
+
         ReactDOM.render(
             <div>
-            <h3>Batman</h3>
-            <h3>Iron Man</h3>
-            <h3>Nicolas Cage</h3>
+                <HelloWorld greetTarget="William"/>
             </div>,
-            destination
-            );
+            document.querySelector("#container")
+        );
     </script>
+    
 </body>
 </html>
