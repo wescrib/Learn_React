@@ -14,6 +14,7 @@
 </head>
 <body>
     <div id="container"></div>
+    <div id="btnTest"></div>
 
     <script type="text/babel">
         var HelloWorld = React.createClass({
@@ -24,12 +25,27 @@
             }
         });
 
+
+        var Buttonify = React.createClass({
+            render: function(){
+                return(
+                    <div>
+                    <button type={this.props.behavior}>{this.props.children}</button>
+                    </div>
+                );
+            }
+        })
         ReactDOM.render(
+            // <div>
+            //     <HelloWorld greetTarget="William"/>
+            //     <HelloWorld greetTarget="STAN"/>
+            // </div>,
+            // document.querySelector("#container"),
             <div>
-                <HelloWorld greetTarget="William"/>
-                <HelloWorld greetTarget="STAN"/>
+            <Buttonify behavior="Submit">SEND DATA</Buttonify>
             </div>,
-            document.querySelector("#container")
+            document.querySelector("#btnTest")
+
         );
     </script>
     
