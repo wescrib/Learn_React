@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header/>
-        <Body/>
+        <Body title={"I am from the body component"}/>
         <Footer/>
       </div>
     );
